@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		353663D02B0EB99200BD7F07 /* AddButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353663CE2B0EB99200BD7F07 /* AddButtonTableViewCell.swift */; };
+		353663D12B0EB99200BD7F07 /* AddButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 353663CF2B0EB99200BD7F07 /* AddButtonTableViewCell.xib */; };
+		353663D62B0EE30200BD7F07 /* SearchPlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353663D52B0EE30200BD7F07 /* SearchPlanController.swift */; };
+		353663D92B0F432B00BD7F07 /* SearchPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353663D72B0F432B00BD7F07 /* SearchPlanTableViewCell.swift */; };
+		353663DA2B0F432B00BD7F07 /* SearchPlanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 353663D82B0F432B00BD7F07 /* SearchPlanTableViewCell.xib */; };
+		353663DC2B0F863600BD7F07 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353663DB2B0F863600BD7F07 /* SearchViewModel.swift */; };
+		353663E02B1035AD00BD7F07 /* SearchPlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353663DF2B1035AD00BD7F07 /* SearchPlanModel.swift */; };
+		35BCCC562B098471002F9FD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCCC552B098471002F9FD1 /* AppDelegate.swift */; };
+		35BCCC582B098471002F9FD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCCC572B098471002F9FD1 /* SceneDelegate.swift */; };
+		35BCCC5A2B098471002F9FD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCCC592B098471002F9FD1 /* ViewController.swift */; };
+		35BCCC5D2B098471002F9FD1 /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35BCCC5B2B098471002F9FD1 /* Tabbar.storyboard */; };
+		35BCCC5F2B098473002F9FD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35BCCC5E2B098473002F9FD1 /* Assets.xcassets */; };
+		35BCCC622B098473002F9FD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35BCCC602B098473002F9FD1 /* LaunchScreen.storyboard */; };
+		35BCCC6E2B0985DE002F9FD1 /* PlanTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35BCCC6D2B0985DE002F9FD1 /* PlanTab.storyboard */; };
+		35BCCC732B09868B002F9FD1 /* PlanToolTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35BCCC722B09868B002F9FD1 /* PlanToolTab.storyboard */; };
+		35BCCC762B0986CA002F9FD1 /* HomeTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35BCCC752B0986CA002F9FD1 /* HomeTab.storyboard */; };
+		35BCCC782B09874F002F9FD1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCCC772B09874F002F9FD1 /* HomeViewController.swift */; };
+		35BCCC7A2B0987EA002F9FD1 /* PlanToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCCC792B0987EA002F9FD1 /* PlanToolViewController.swift */; };
+		35BCCC7C2B0987FD002F9FD1 /* PlanTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCCC7B2B0987FD002F9FD1 /* PlanTabViewController.swift */; };
+		35BCCC842B0B7967002F9FD1 /* PlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCCC832B0B7967002F9FD1 /* PlanViewModel.swift */; };
+		D29A44733ACFA04A951DBEF2 /* Pods_tripPlan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD7E0E8BCE62CBC5333E56D /* Pods_tripPlan.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2371231626B112C783E124DA /* Pods-tripPlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tripPlan.debug.xcconfig"; path = "Target Support Files/Pods-tripPlan/Pods-tripPlan.debug.xcconfig"; sourceTree = "<group>"; };
+		353663CE2B0EB99200BD7F07 /* AddButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonTableViewCell.swift; sourceTree = "<group>"; };
+		353663CF2B0EB99200BD7F07 /* AddButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddButtonTableViewCell.xib; sourceTree = "<group>"; };
+		353663D52B0EE30200BD7F07 /* SearchPlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlanController.swift; sourceTree = "<group>"; };
+		353663D72B0F432B00BD7F07 /* SearchPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlanTableViewCell.swift; sourceTree = "<group>"; };
+		353663D82B0F432B00BD7F07 /* SearchPlanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchPlanTableViewCell.xib; sourceTree = "<group>"; };
+		353663DB2B0F863600BD7F07 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		353663DF2B1035AD00BD7F07 /* SearchPlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlanModel.swift; sourceTree = "<group>"; };
+		35BCCC522B098471002F9FD1 /* tripPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tripPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		35BCCC552B098471002F9FD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		35BCCC572B098471002F9FD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		35BCCC592B098471002F9FD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		35BCCC5C2B098471002F9FD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tabbar.storyboard; sourceTree = "<group>"; };
+		35BCCC5E2B098473002F9FD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		35BCCC612B098473002F9FD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		35BCCC632B098473002F9FD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35BCCC6D2B0985DE002F9FD1 /* PlanTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlanTab.storyboard; sourceTree = "<group>"; };
+		35BCCC722B09868B002F9FD1 /* PlanToolTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlanToolTab.storyboard; sourceTree = "<group>"; };
+		35BCCC752B0986CA002F9FD1 /* HomeTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTab.storyboard; sourceTree = "<group>"; };
+		35BCCC772B09874F002F9FD1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		35BCCC792B0987EA002F9FD1 /* PlanToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanToolViewController.swift; sourceTree = "<group>"; };
+		35BCCC7B2B0987FD002F9FD1 /* PlanTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTabViewController.swift; sourceTree = "<group>"; };
+		35BCCC832B0B7967002F9FD1 /* PlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewModel.swift; sourceTree = "<group>"; };
+		DDD7E0E8BCE62CBC5333E56D /* Pods_tripPlan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tripPlan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA5FF063B5159441F18E018F /* Pods-tripPlan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tripPlan.release.xcconfig"; path = "Target Support Files/Pods-tripPlan/Pods-tripPlan.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		35BCCC4F2B098471002F9FD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29A44733ACFA04A951DBEF2 /* Pods_tripPlan.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17FE81FD6C32C6CD93F689BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2371231626B112C783E124DA /* Pods-tripPlan.debug.xcconfig */,
+				EA5FF063B5159441F18E018F /* Pods-tripPlan.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		1F4318AF45F62D3DECD1152C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDD7E0E8BCE62CBC5333E56D /* Pods_tripPlan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		353663D22B0EDF9D00BD7F07 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				35BCCC6D2B0985DE002F9FD1 /* PlanTab.storyboard */,
+				353663CE2B0EB99200BD7F07 /* AddButtonTableViewCell.swift */,
+				353663CF2B0EB99200BD7F07 /* AddButtonTableViewCell.xib */,
+				353663D72B0F432B00BD7F07 /* SearchPlanTableViewCell.swift */,
+				353663D82B0F432B00BD7F07 /* SearchPlanTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		353663D32B0EDFA800BD7F07 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				35BCCC832B0B7967002F9FD1 /* PlanViewModel.swift */,
+				353663DB2B0F863600BD7F07 /* SearchViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		353663D42B0EDFB500BD7F07 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				35BCCC7B2B0987FD002F9FD1 /* PlanTabViewController.swift */,
+				353663D52B0EE30200BD7F07 /* SearchPlanController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		353663DD2B10359B00BD7F07 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				353663DF2B1035AD00BD7F07 /* SearchPlanModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35BCCC492B098471002F9FD1 = {
+			isa = PBXGroup;
+			children = (
+				35BCCC542B098471002F9FD1 /* tripPlan */,
+				35BCCC532B098471002F9FD1 /* Products */,
+				17FE81FD6C32C6CD93F689BA /* Pods */,
+				1F4318AF45F62D3DECD1152C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		35BCCC532B098471002F9FD1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				35BCCC522B098471002F9FD1 /* tripPlan.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		35BCCC542B098471002F9FD1 /* tripPlan */ = {
+			isa = PBXGroup;
+			children = (
+				35BCCC742B0986BE002F9FD1 /* HomeTab */,
+				35BCCC712B09867A002F9FD1 /* PlanToolTab */,
+				35BCCC6A2B0984FC002F9FD1 /* PlanTab */,
+				35BCCC692B0984EF002F9FD1 /* Tabbar */,
+				35BCCC552B098471002F9FD1 /* AppDelegate.swift */,
+				35BCCC572B098471002F9FD1 /* SceneDelegate.swift */,
+				35BCCC592B098471002F9FD1 /* ViewController.swift */,
+				35BCCC5E2B098473002F9FD1 /* Assets.xcassets */,
+				35BCCC602B098473002F9FD1 /* LaunchScreen.storyboard */,
+				35BCCC632B098473002F9FD1 /* Info.plist */,
+			);
+			path = tripPlan;
+			sourceTree = "<group>";
+		};
+		35BCCC692B0984EF002F9FD1 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				35BCCC5B2B098471002F9FD1 /* Tabbar.storyboard */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		35BCCC6A2B0984FC002F9FD1 /* PlanTab */ = {
+			isa = PBXGroup;
+			children = (
+				353663DD2B10359B00BD7F07 /* Model */,
+				353663D42B0EDFB500BD7F07 /* Controllers */,
+				353663D32B0EDFA800BD7F07 /* ViewModels */,
+				353663D22B0EDF9D00BD7F07 /* Views */,
+			);
+			path = PlanTab;
+			sourceTree = "<group>";
+		};
+		35BCCC712B09867A002F9FD1 /* PlanToolTab */ = {
+			isa = PBXGroup;
+			children = (
+				35BCCC722B09868B002F9FD1 /* PlanToolTab.storyboard */,
+				35BCCC792B0987EA002F9FD1 /* PlanToolViewController.swift */,
+			);
+			path = PlanToolTab;
+			sourceTree = "<group>";
+		};
+		35BCCC742B0986BE002F9FD1 /* HomeTab */ = {
+			isa = PBXGroup;
+			children = (
+				35BCCC752B0986CA002F9FD1 /* HomeTab.storyboard */,
+				35BCCC772B09874F002F9FD1 /* HomeViewController.swift */,
+			);
+			path = HomeTab;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		35BCCC512B098471002F9FD1 /* tripPlan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35BCCC662B098473002F9FD1 /* Build configuration list for PBXNativeTarget "tripPlan" */;
+			buildPhases = (
+				D532C2C05367FFDC00DA779A /* [CP] Check Pods Manifest.lock */,
+				35BCCC4E2B098471002F9FD1 /* Sources */,
+				35BCCC4F2B098471002F9FD1 /* Frameworks */,
+				35BCCC502B098471002F9FD1 /* Resources */,
+				8689F1823E1650314B40F8BB /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tripPlan;
+			productName = tripPlan;
+			productReference = 35BCCC522B098471002F9FD1 /* tripPlan.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		35BCCC4A2B098471002F9FD1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					35BCCC512B098471002F9FD1 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 35BCCC4D2B098471002F9FD1 /* Build configuration list for PBXProject "tripPlan" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 35BCCC492B098471002F9FD1;
+			productRefGroup = 35BCCC532B098471002F9FD1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				35BCCC512B098471002F9FD1 /* tripPlan */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		35BCCC502B098471002F9FD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				353663DA2B0F432B00BD7F07 /* SearchPlanTableViewCell.xib in Resources */,
+				353663D12B0EB99200BD7F07 /* AddButtonTableViewCell.xib in Resources */,
+				35BCCC732B09868B002F9FD1 /* PlanToolTab.storyboard in Resources */,
+				35BCCC622B098473002F9FD1 /* LaunchScreen.storyboard in Resources */,
+				35BCCC5F2B098473002F9FD1 /* Assets.xcassets in Resources */,
+				35BCCC5D2B098471002F9FD1 /* Tabbar.storyboard in Resources */,
+				35BCCC6E2B0985DE002F9FD1 /* PlanTab.storyboard in Resources */,
+				35BCCC762B0986CA002F9FD1 /* HomeTab.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8689F1823E1650314B40F8BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tripPlan/Pods-tripPlan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tripPlan/Pods-tripPlan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tripPlan/Pods-tripPlan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D532C2C05367FFDC00DA779A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tripPlan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		35BCCC4E2B098471002F9FD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				353663DC2B0F863600BD7F07 /* SearchViewModel.swift in Sources */,
+				35BCCC5A2B098471002F9FD1 /* ViewController.swift in Sources */,
+				35BCCC7C2B0987FD002F9FD1 /* PlanTabViewController.swift in Sources */,
+				35BCCC7A2B0987EA002F9FD1 /* PlanToolViewController.swift in Sources */,
+				353663D62B0EE30200BD7F07 /* SearchPlanController.swift in Sources */,
+				35BCCC562B098471002F9FD1 /* AppDelegate.swift in Sources */,
+				35BCCC582B098471002F9FD1 /* SceneDelegate.swift in Sources */,
+				353663D92B0F432B00BD7F07 /* SearchPlanTableViewCell.swift in Sources */,
+				35BCCC842B0B7967002F9FD1 /* PlanViewModel.swift in Sources */,
+				35BCCC782B09874F002F9FD1 /* HomeViewController.swift in Sources */,
+				353663E02B1035AD00BD7F07 /* SearchPlanModel.swift in Sources */,
+				353663D02B0EB99200BD7F07 /* AddButtonTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		35BCCC5B2B098471002F9FD1 /* Tabbar.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35BCCC5C2B098471002F9FD1 /* Base */,
+			);
+			name = Tabbar.storyboard;
+			sourceTree = "<group>";
+		};
+		35BCCC602B098473002F9FD1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35BCCC612B098473002F9FD1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		35BCCC642B098473002F9FD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		35BCCC652B098473002F9FD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		35BCCC672B098473002F9FD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2371231626B112C783E124DA /* Pods-tripPlan.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = tripPlan/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Tabbar;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungonlee.tripPlan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		35BCCC682B098473002F9FD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA5FF063B5159441F18E018F /* Pods-tripPlan.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = tripPlan/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Tabbar;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungonlee.tripPlan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		35BCCC4D2B098471002F9FD1 /* Build configuration list for PBXProject "tripPlan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35BCCC642B098473002F9FD1 /* Debug */,
+				35BCCC652B098473002F9FD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35BCCC662B098473002F9FD1 /* Build configuration list for PBXNativeTarget "tripPlan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35BCCC672B098473002F9FD1 /* Debug */,
+				35BCCC682B098473002F9FD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 35BCCC4A2B098471002F9FD1 /* Project object */;
+}
