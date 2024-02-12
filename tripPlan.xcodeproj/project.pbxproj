@@ -14,6 +14,12 @@
 		353663DA2B0F432B00BD7F07 /* SearchPlanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 353663D82B0F432B00BD7F07 /* SearchPlanTableViewCell.xib */; };
 		353663DC2B0F863600BD7F07 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353663DB2B0F863600BD7F07 /* SearchViewModel.swift */; };
 		353663E02B1035AD00BD7F07 /* SearchPlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353663DF2B1035AD00BD7F07 /* SearchPlanModel.swift */; };
+		356CFE2E2B4A9D0500BD91EA /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356CFE2D2B4A9D0500BD91EA /* AddTripViewController.swift */; };
+		356CFE302B51455500BD91EA /* TripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356CFE2F2B51455400BD91EA /* TripViewModel.swift */; };
+		356CFE322B5145BA00BD91EA /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356CFE312B5145BA00BD91EA /* TripModel.swift */; };
+		356CFE402B56C7A300BD91EA /* CalanderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356CFE3F2B56C7A300BD91EA /* CalanderViewController.swift */; };
+		35A077D62B21E07700EE099C /* MKLocalSearchCompleter+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A077D52B21E07700EE099C /* MKLocalSearchCompleter+Rx.swift */; };
+		35A077DA2B2E853E00EE099C /* MKMapView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A077D92B2E853E00EE099C /* MKMapView+Rx.swift */; };
 		35BCCC562B098471002F9FD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCCC552B098471002F9FD1 /* AppDelegate.swift */; };
 		35BCCC582B098471002F9FD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCCC572B098471002F9FD1 /* SceneDelegate.swift */; };
 		35BCCC5A2B098471002F9FD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BCCC592B098471002F9FD1 /* ViewController.swift */; };
@@ -39,6 +45,12 @@
 		353663D82B0F432B00BD7F07 /* SearchPlanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchPlanTableViewCell.xib; sourceTree = "<group>"; };
 		353663DB2B0F863600BD7F07 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		353663DF2B1035AD00BD7F07 /* SearchPlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlanModel.swift; sourceTree = "<group>"; };
+		356CFE2D2B4A9D0500BD91EA /* AddTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
+		356CFE2F2B51455400BD91EA /* TripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewModel.swift; sourceTree = "<group>"; };
+		356CFE312B5145BA00BD91EA /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
+		356CFE3F2B56C7A300BD91EA /* CalanderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalanderViewController.swift; sourceTree = "<group>"; };
+		35A077D52B21E07700EE099C /* MKLocalSearchCompleter+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKLocalSearchCompleter+Rx.swift"; sourceTree = "<group>"; };
+		35A077D92B2E853E00EE099C /* MKMapView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Rx.swift"; sourceTree = "<group>"; };
 		35BCCC522B098471002F9FD1 /* tripPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tripPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35BCCC552B098471002F9FD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35BCCC572B098471002F9FD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +137,49 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		356CFE372B5203E900BD91EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				35BCCC752B0986CA002F9FD1 /* HomeTab.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		356CFE382B5203FC00BD91EA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				35BCCC772B09874F002F9FD1 /* HomeViewController.swift */,
+				356CFE2D2B4A9D0500BD91EA /* AddTripViewController.swift */,
+				356CFE3F2B56C7A300BD91EA /* CalanderViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		356CFE392B52040400BD91EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				356CFE312B5145BA00BD91EA /* TripModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		356CFE3A2B52040F00BD91EA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				356CFE2F2B51455400BD91EA /* TripViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		35A077D42B21E02700EE099C /* RxExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				35A077D52B21E07700EE099C /* MKLocalSearchCompleter+Rx.swift */,
+				35A077D92B2E853E00EE099C /* MKMapView+Rx.swift */,
+			);
+			path = RxExtensions;
+			sourceTree = "<group>";
+		};
 		35BCCC492B098471002F9FD1 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +201,7 @@
 		35BCCC542B098471002F9FD1 /* tripPlan */ = {
 			isa = PBXGroup;
 			children = (
+				35A077D42B21E02700EE099C /* RxExtensions */,
 				35BCCC742B0986BE002F9FD1 /* HomeTab */,
 				35BCCC712B09867A002F9FD1 /* PlanToolTab */,
 				35BCCC6A2B0984FC002F9FD1 /* PlanTab */,
@@ -191,8 +247,10 @@
 		35BCCC742B0986BE002F9FD1 /* HomeTab */ = {
 			isa = PBXGroup;
 			children = (
-				35BCCC752B0986CA002F9FD1 /* HomeTab.storyboard */,
-				35BCCC772B09874F002F9FD1 /* HomeViewController.swift */,
+				356CFE3A2B52040F00BD91EA /* ViewModels */,
+				356CFE392B52040400BD91EA /* Model */,
+				356CFE382B5203FC00BD91EA /* Controllers */,
+				356CFE372B5203E900BD91EA /* Views */,
 			);
 			path = HomeTab;
 			sourceTree = "<group>";
@@ -320,10 +378,16 @@
 				353663DC2B0F863600BD7F07 /* SearchViewModel.swift in Sources */,
 				35BCCC5A2B098471002F9FD1 /* ViewController.swift in Sources */,
 				35BCCC7C2B0987FD002F9FD1 /* PlanTabViewController.swift in Sources */,
+				35A077DA2B2E853E00EE099C /* MKMapView+Rx.swift in Sources */,
 				35BCCC7A2B0987EA002F9FD1 /* PlanToolViewController.swift in Sources */,
+				356CFE2E2B4A9D0500BD91EA /* AddTripViewController.swift in Sources */,
+				356CFE322B5145BA00BD91EA /* TripModel.swift in Sources */,
 				353663D62B0EE30200BD7F07 /* SearchPlanController.swift in Sources */,
+				35A077D62B21E07700EE099C /* MKLocalSearchCompleter+Rx.swift in Sources */,
 				35BCCC562B098471002F9FD1 /* AppDelegate.swift in Sources */,
+				356CFE302B51455500BD91EA /* TripViewModel.swift in Sources */,
 				35BCCC582B098471002F9FD1 /* SceneDelegate.swift in Sources */,
+				356CFE402B56C7A300BD91EA /* CalanderViewController.swift in Sources */,
 				353663D92B0F432B00BD7F07 /* SearchPlanTableViewCell.swift in Sources */,
 				35BCCC842B0B7967002F9FD1 /* PlanViewModel.swift in Sources */,
 				35BCCC782B09874F002F9FD1 /* HomeViewController.swift in Sources */,
@@ -476,6 +540,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V3BJ8GLPJL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tripPlan/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -504,6 +569,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V3BJ8GLPJL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tripPlan/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

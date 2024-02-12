@@ -12,8 +12,9 @@ import RxSwift
 class SearchPlanTableViewCell: UITableViewCell {
 
     var disposeBag = DisposeBag()
-    var tapSelectButtonAction: ((Int) -> Void)?
-    var index: Int?
+    var tapSelectButtonAction: ((Int, Int, UIButton) -> Void)?
+    var sectionIndex: Int?
+    var rowIndex: Int?
     @IBOutlet weak var placeImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -35,7 +36,6 @@ class SearchPlanTableViewCell: UITableViewCell {
     }
     
     @IBAction func tapSelectButton(_ sender: UIButton) {
-        tapSelectButtonAction?(index!)
+        tapSelectButtonAction?(sectionIndex!, rowIndex!, sender)
     }
-    
 }

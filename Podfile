@@ -8,6 +8,6 @@ target 'tripPlan' do
   # Pods for tripPlan
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'RealmSwift'
   pod 'TimelineTableViewCell'
+  pod 'FSCalendar'
 end

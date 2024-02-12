@@ -1,32 +1,21 @@
 //
-//  SearchPlanController.swift
+//  AddTripViewController.swift
 //  tripPlan
 //
-//  Created by 이순곤 on 2023/11/23.
+//  Created by 이순곤 on 2024/01/07.
 //
 
 import Foundation
 import UIKit
+import TimelineTableViewCell
 import RxCocoa
 import RxSwift
-import MapKit
-import CoreLocation
 
-
-protocol SearchPlanDataBackDelegate {
-    func searchPlanDataBack(_ index: Int, _ plans: [SearchPlanModelForTabView])
-}
-
-enum LookaroundError: Error {
-    case unableToCreateScene
-}
-
-class SearchPlanController: UIViewController {
-    
+class AddTripViewController: UIViewController {
     var delegate: SearchPlanDataBackDelegate?
     @IBOutlet weak var tableView: UITableView!
     var planIndex: Int?
-    let searchVM = SearchViewModel()
+    let tripVM = TripViewModel()
     let disposeBag = DisposeBag()
     var selectedItemStack = [Int]()
     var scrollView = UIScrollView()
@@ -38,36 +27,19 @@ class SearchPlanController: UIViewController {
     var tagIndex = 0
     var selectPlaceList = [String]()
     var textLabel = UILabel()
-    let searchCompleter = MKLocalSearchCompleter()
-    let geocoder = CLGeocoder()
-    var newSearchPlanModels = [SearchPlanModel]()
-    var selectedSearchPlan = [SearchPlanModel]()
-    let searchPlanSubject = PublishSubject<[SearchPlanModel]>()
+    var selectedSearchPlan = [TripModel]()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var bounds = UIScreen.main.bounds
-        var width = bounds.size.width //화면 너비
-        let textField = UITextField(frame: CGRect(x: 0, y: 0, width: width - 28, height: 40))
-        textField.placeholder = "タイプしてください。"
-        textField.backgroundColor = UIColor.clear
-        
-        // 네비게이션 바 아래에 테두리 추가
-        let borderBottom = CALayer()
-        let borderWidth: CGFloat = 1
-        let navigationBarHeight = self.navigationController?.navigationBar.frame.height ?? 0
-        borderBottom.frame = CGRect(x: 0, y: navigationBarHeight, width: UIScreen.main.bounds.width, height: borderWidth)
-        borderBottom.backgroundColor = UIColor.black.cgColor
-        self.navigationController?.navigationBar.layer.addSublayer(borderBottom)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: textField)
         
         selectButton = UIButton()
         selectButton.translatesAutoresizingMaskIntoConstraints = false
         selectButton.setTitle("選択完了", for: .normal)
         selectButton.titleLabel!.textAlignment = .center
         selectButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-
+        
         selectButton.backgroundColor = UIColor(hue: 0.5917, saturation: 0.79, brightness: 1, alpha: 1.0)
         selectButton.tintColor = .clear //.white
         self.view.addSubview(selectButton)
@@ -78,70 +50,29 @@ class SearchPlanController: UIViewController {
             selectButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
         ])
         //setupTableView()
-
-        textField
-            .rx
-            .controlEvent(.editingDidEndOnExit)
-            .subscribe(onNext: {
-                   if let text = textField.text {
-                       self.searchCompleter.queryFragment = text
-                   }
-               })
-               .disposed(by: disposeBag)
-        
         let searchPlanTableViewCellNib = UINib(nibName: "SearchPlanTableViewCell", bundle: Bundle(for: SearchPlanTableViewCell.self))
         self.tableView.register(searchPlanTableViewCellNib, forCellReuseIdentifier: "SearchPlanTableCell")
-        let searchPlanDataSource = SearchPlanDataSource()
-
-        searchCompleter
-            .rx
-            .didUpdateResults
-            .flatMap {
-                let results = $0
-                self.newSearchPlanModels = [SearchPlanModel]()
-                for result in results {
-                    let request = MKLocalSearch.Request()
-                    let coordinate = CLLocationCoordinate2DMake(21.029429272433653, 105.83730702275895)
-                    let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 1000.0, longitudinalMeters: 1000.0)
-                    request.region = region
-                    request.naturalLanguageQuery = result.title
-                    MKLocalSearch(request: request).start { (response, error) in
-                        guard let response = response else {
-                            return
-                        }
-
-                        let mapItems = response.mapItems
-                        for item in mapItems {
-                            let sceneRequest = MKLookAroundSceneRequest(mapItem: item)
-                            sceneRequest.getSceneWithCompletionHandler { scene, error in
-                                guard error == nil, let scene = scene else {
-                                    return
-                                }
-                                
-                                let lookAroundSnapshotter = MKLookAroundSnapshotter(scene: scene, options: .init())
-                                lookAroundSnapshotter.getSnapshotWithCompletionHandler { snapshot, error in
-                                    guard error == nil, let snapshot = snapshot else {
-                                        return
-                                    }
-                                    let coordinate = item.placemark.coordinate
-                                    let model = SearchPlanModel(placeImage: snapshot.image, title: result.title, descriptionLabel: result.subtitle, buttonIsEnabled: true, longitude: coordinate.longitude, latitude: coordinate.latitude)
-                                    self.newSearchPlanModels.append(model)
-                                    self.searchPlanSubject.onNext(self.newSearchPlanModels)
-                                }
-                            }
-                        }
-                    }
-                }
-                return self.searchPlanSubject.asObservable()
-
-            }.bind(to: tableView.rx.items(dataSource: searchPlanDataSource))
-            .disposed(by: disposeBag)
-
-        searchPlanDataSource.updateConstraintClosure = { [weak self] sectionIndex, rowindex, button  in
+        let addTripDataSource = AddTripDataSource()
+            
+        tripVM.tripList.bind(to: tableView.rx.items(dataSource: addTripDataSource)).disposed(by: disposeBag)
+        addTripDataSource.updateConstraintClosure = { [weak self] sectionIdex, rowIndex, button  in
             guard let self = self else { return }
-            newSearchPlanModels[rowindex].buttonIsEnabled = false
-            selectedSearchPlan.append(newSearchPlanModels[rowindex])
-            searchPlanSubject.onNext(newSearchPlanModels)
+            var newTrip = tripVM.tripList.value
+            let sortedCategories = Set(newTrip.map { $0.category }).sorted { (category1, category2) in
+                return category1.localizedStandardCompare(category2) == .orderedAscending
+            }
+            let category = Array(sortedCategories)[sectionIdex]
+            let categoryItems = newTrip.filter { $0.category == category }
+            var tripModel = categoryItems[rowIndex]
+            if let index = newTrip.firstIndex(where: { $0.orderNo == tripModel.orderNo }) {
+                // 찾은 요소의 buttonIsEnabled 속성을 false로 설정
+                newTrip[index].buttonIsEnabled = false
+                selectedSearchPlan.append(tripModel)
+     
+                // 변경된 배열을 다시 BehaviorRelay에 반영
+                tripVM.tripList.accept(newTrip)
+            }
+            
             if stackView.arrangedSubviews.count == 0 {
                 // 기존 코드 유지
                 viewBottomConstraint?.isActive = false
@@ -155,7 +86,7 @@ class SearchPlanController: UIViewController {
                 scrollView.showsHorizontalScrollIndicator = true
                 scrollView.showsVerticalScrollIndicator = false
                 self.view.addSubview(scrollView)
-            
+                
                 NSLayoutConstraint.activate([
                     scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0),
                     scrollView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
@@ -181,7 +112,7 @@ class SearchPlanController: UIViewController {
                 selectButton.setTitle("選択完了", for: .normal)
                 selectButton.titleLabel!.textAlignment = .center
                 selectButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-
+                
                 selectButton.backgroundColor = UIColor(hue: 0.5917, saturation: 0.79, brightness: 1, alpha: 1.0)
                 selectButton.tintColor = .white
                 selectButton.addTarget(self, action: #selector(tabSelectButton), for: .touchUpInside)
@@ -208,10 +139,10 @@ class SearchPlanController: UIViewController {
             
             let label = UILabel()
             let view = UIView()
-            let button = tableSelectButton(viewIndex: tagIndex, tableIndex: rowindex)
+            let button = tableSelectButton(viewIndex: tagIndex, tableIndex: rowIndex)
             view.tag = tagIndex
             tagIndex += 1
-
+            
             view.translatesAutoresizingMaskIntoConstraints = false
             label.translatesAutoresizingMaskIntoConstraints = false
             label.font = UIFont.systemFont(ofSize: 13)
@@ -222,20 +153,20 @@ class SearchPlanController: UIViewController {
             button.imageView?.tintColor = .white
             button.backgroundColor = .clear
             button.layer.cornerRadius = button.layer.frame.size.width / 2
-
+            
             var imageView = UIImageView()
             imageView.translatesAutoresizingMaskIntoConstraints = false
-            let selectPlace = Observable.of(newSearchPlanModels[rowindex])
+            let selectPlace = Observable.of(selectedSearchPlan.last!)
             selectPlace.map({ searchPlan in
                 searchPlan.placeImage
             }).bind(to: imageView.rx.image)
-            .disposed(by: disposeBag)
+                .disposed(by: disposeBag)
             view.addSubview(imageView)
 
             selectPlace.map({ searchPlan in
                 searchPlan.title
             }).bind(to: label.rx.text)
-            .disposed(by: disposeBag)
+                .disposed(by: disposeBag)
             view.addSubview(label)
             imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true
             imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
@@ -268,8 +199,6 @@ class SearchPlanController: UIViewController {
         }
     }
     
-    
-    
     private func setupMainStackView(){
         //self.stackView = UIStackView()
         stackView.axis = .horizontal
@@ -296,9 +225,14 @@ class SearchPlanController: UIViewController {
             // If a view with a matching tag is found, remove it from the stackView
             stackView.removeArrangedSubview(viewToRemove)
             viewToRemove.removeFromSuperview()
-            let indexPath = IndexPath(row: tableIndex, section: 0)
-            newSearchPlanModels[tableIndex].buttonIsEnabled = true
-            self.searchPlanSubject.onNext(self.newSearchPlanModels)
+            
+            let tripModel = selectedSearchPlan[viewIndex]
+            var newTrip = tripVM.tripList.value
+            if let index = newTrip.firstIndex(where: { $0.orderNo == tripModel.orderNo }) {
+                // 찾은 요소의 buttonIsEnabled 속성을 false로 설정
+                newTrip[index].buttonIsEnabled = true
+                tripVM.tripList.accept(newTrip)
+            }
         }
         
         if stackView.arrangedSubviews.count == 0 {
@@ -326,40 +260,35 @@ class SearchPlanController: UIViewController {
         }
         selectedSearchPlan.remove(at: viewIndex)
         tableView.reloadData()
-        
     }
     
-    @objc func tabSelectButton(_ sender: UIButton) {
-        print("tabSelectButton")
-        let plans = selectedSearchPlan
-            .enumerated() // 배열의 요소와 인덱스를 함께 가져옵니다.
-            .map { index, searchPlan in
-                let searchPlanModelForTabView = SearchPlanModelForTabView(
-                    orderNo: index,
-                    placeImage: searchPlan.placeImage,
-                    title: searchPlan.title,
-                    descriptionLabel: searchPlan.descriptionLabel,
-                    buttonIsEnabled: searchPlan.buttonIsEnabled,
-                    longitude: searchPlan.longitude,
-                    latitude: searchPlan.latitude)
-                return searchPlanModelForTabView
-            }
-        delegate?.searchPlanDataBack(planIndex!, plans)
-        navigationController?.popViewController(animated: true)
+    @objc func tabSelectButton(_ sender: tableSelectButton) {
+        let homeTab = UIStoryboard.init(name: "HomeTab", bundle: nil)
+        guard let tabBarController = homeTab.instantiateViewController(withIdentifier: "CalanderViewController")as? CalanderViewController else {return}
+        self.navigationController?.pushViewController(tabBarController, animated: true)
+
     }
+    
 }
 
-final class SearchPlanDataSource: NSObject, UITableViewDataSource, RxTableViewDataSourceType {
+final class AddTripDataSource: NSObject, UITableViewDataSource, RxTableViewDataSourceType {
    
-    typealias Element = [SearchPlanModel]
-    var _itemModels: [SearchPlanModel] = []
-    var updateConstraintClosure: ((Int, Int, UIButton) -> Void)?
+    typealias Element = [TripModel]
+    var _itemModels: [TripModel] = []
+    var categories: [String] {
+        let sortedCategories = Set(_itemModels.map { $0.category }).sorted { (category1, category2) in
+            return category1.localizedStandardCompare(category2) == .orderedAscending
+        }
+        return sortedCategories
+    }
     
+    var updateConstraintClosure: ((Int, Int, UIButton) -> Void)?
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        let count = categories.count
+        return count
     }
 
-    func tableView(_ tableView: UITableView, observedEvent: RxSwift.Event<[SearchPlanModel]>) {
+    func tableView(_ tableView: UITableView, observedEvent: RxSwift.Event<[TripModel]>) {
         Binder(self) { dataSource, element in
             dataSource._itemModels = element
             tableView.reloadData()
@@ -368,42 +297,36 @@ final class SearchPlanDataSource: NSObject, UITableViewDataSource, RxTableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return _itemModels.count
+        let category = Array(categories)[section]
+        let count = _itemModels.filter { $0.category == category }.count
+        
+        return count
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-            return "Day " + String(describing: section + 1)
+        return Array(categories)[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchPlanTableCell", for: indexPath) as! SearchPlanTableViewCell
-        let item = _itemModels[indexPath.row]
-        cell.rowIndex = indexPath.row
+        let category = Array(categories)[indexPath.section]
+        let categoryItems = _itemModels.filter { $0.category == category }
+        let tripModel = categoryItems[indexPath.row]
         cell.sectionIndex = indexPath.section
-        cell.descriptionLabel.text = item.descriptionLabel
-        cell.placeImageView.image = item.placeImage
-        cell.titleLabel.text = item.title
+        cell.rowIndex = indexPath.row
+        cell.descriptionLabel.text = tripModel.descriptionLabel
+        cell.placeImageView.image = tripModel.placeImage
+        cell.placeImageView.layer.cornerRadius = cell.placeImageView.frame.height / 2
+        cell.placeImageView.clipsToBounds = true
+        cell.placeImageView.layer.borderWidth = 5
+        cell.placeImageView.layer.borderColor = UIColor.white.cgColor
+
+        cell.titleLabel.text = tripModel.title
         cell.tapSelectButtonAction = updateConstraintClosure
-        cell.selectButton.isEnabled = item.buttonIsEnabled
+        cell.selectButton.isEnabled = tripModel.buttonIsEnabled
 
         return cell
     }
     
     
-}
-
-class tableSelectButton: UIButton {
-    var viewIndex: Int
-    var tableIndex: Int
-    
-    init(viewIndex: Int, tableIndex: Int) {
-        self.viewIndex = viewIndex
-        self.tableIndex = tableIndex
-        
-        super.init(frame: .zero)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
